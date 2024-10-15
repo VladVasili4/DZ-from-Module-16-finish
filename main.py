@@ -20,7 +20,7 @@ def get_all_users(request: Request) -> HTMLResponse:
     return templates.TemplateResponse('users.html', {'request': request, 'users': users})
 
 
-@app.get("/user/{user_id}")
+@app.get(path="/user/{user_id}")
 def get_users(request: Request, user_id: int) -> HTMLResponse:
     return templates.TemplateResponse('users.html', {'request': request, 'user': users[user_id]})
 
