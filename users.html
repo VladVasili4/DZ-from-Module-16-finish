@@ -20,23 +20,23 @@
 </section>
 
 {% if user %}
-<article class="card container fluid"></article>
+<article class="card container fluid"> </article>
 <br>
-
-<article class="card container fluid">
-    <h3 align = "center"> ID = {{user.id}} </h3>         <!--#{{user.id}} </h3>-->
+<article class="card container fluid" >
+    <h3 align = "center" > ID = {{user.id}} </h3>
     <p>
         <strong>
-            Username : {{user.username}}
+            Username : {{user.username}} <br>
+            Age : {{user.age}}
         </strong>
     </p>
 </article>
 {% else %}
 <section class="container-fluid">
-    <h3 align="center"> Users </h3>
+    <h3 align="center"> USERS </h3>
     <br>
-    <div class="card">
-        <ul class="list-group list-group-flush">
+    <div class = "card">
+        <ul class = "list-group list-group-flush">
             {% for user in users %}
             <li class = "list-group-item">
                 {{user.id}}
