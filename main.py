@@ -22,7 +22,7 @@ def get_all_users(request: Request) -> HTMLResponse:
 
 @app.get("/user/{user_id}")
 def get_users(request: Request, user_id: int) -> HTMLResponse:
-    return templates.TemplateResponse('users.html', {'request': request, 'users': users[user_id]})
+    return templates.TemplateResponse('users.html', {'request': request, 'user': users[user_id]})
 
 
 @app.post('/user', status_code=status.HTTP_201_CREATED)
