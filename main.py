@@ -49,8 +49,9 @@ def update_user(id: int, username: str, age: int, user: User = Body()) -> User:
 
 
 @app.delete('/user/{id}')
-def delete_user(id: int, user: User ) -> User:
+def delete_user(id: int) -> User:
     try:
+        user = User()
         users.pop(id-1)
         return user
     except IndexError:
