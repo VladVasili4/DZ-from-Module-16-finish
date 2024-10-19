@@ -38,12 +38,12 @@ def create_user(request: Request, username: str = Form(), age: str = Form()) -> 
     return templates.TemplateResponse('users.html', {'request': request, 'users': users})
 
 @app.put('/user/{id}/{username}/{age}')
-def update_user(id: int, username: str, age: int, user: User = Body()) -> User:
+def update_user(id: int, username: str, age: int) #, user: User = Body()) -> User:
     try:
         edit_user = users[id-1]
         edit_user.username = username
         edit_user.age = age
-        return user
+        return edit_user
     except IndexError:
         raise HTTPException(status_code=404, detail="User was not found")
 
