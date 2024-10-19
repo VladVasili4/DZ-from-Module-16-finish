@@ -38,7 +38,7 @@ def create_user(request: Request, username: str = Form(), age: str = Form()) -> 
     return templates.TemplateResponse('users.html', {'request': request, 'users': users})
 
 @app.put('/user/{id}/{username}/{age}')
-def update_user(id: int, username: str, age: int) #, user: User = Body()) -> User:
+def update_user(id: int, username: str, age: int):
     try:
         edit_user = users[id-1]
         edit_user.username = username
